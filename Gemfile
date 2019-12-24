@@ -5,7 +5,7 @@ ruby '2.6.3'
 
 gem 'devise'
 gem 'devise-i18n'
-gem 'russian'
+gem 'rails-i18n', '~> 6.0.0'
 gem 'rails', '~> 6.0.1'
 gem 'puma', '~> 4.1'
 gem 'sass-rails', '>= 6'

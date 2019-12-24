@@ -23,3 +23,7 @@ ru:
       deleted: 'Событие успешно удалено!'
   app:
     name: 'Шашлыки'
+  errors:
+    one: '%{count} ошибка'
+    few: '%{count} ошибки'
+    many: '%{count} ошибок'
