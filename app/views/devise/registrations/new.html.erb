@@ -10,15 +10,12 @@
   </div>
 
   <div class="form-group">
-    <%= f.label :password, 'Пароль' %>
-    <% if @minimum_password_length %>
-    <em>(<%= @minimum_password_length %> символов минимум)</em>
-    <% end %><br />
+    <%= f.label :password, "Пароль #{min_pass_len}" %>
     <%= f.password_field :password, class: 'form-control', autocomplete: "new-password" %>
   </div>
 
   <div class="form-group">
-    <%= f.label :password_confirmation, 'Подтверждение пороля' %><br />
+    <%= f.label :password_confirmation, 'Подтверждение пороля' %>
     <%= f.password_field :password_confirmation, class: 'form-control', autocomplete: "new-password" %>
   </div>
 
