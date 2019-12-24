@@ -22,7 +22,7 @@ class EventsController < ApplicationController
 
     respond_to do |format|
       if @event.save
-        format.html { redirect_to @event, notice: 'Event was successfully created.' }
+        format.html { redirect_to @event, notice: I18n.t('controllers.events.created') }
         format.json { render :show, status: :created, location: @event }
       else
         format.html { render :new }
@@ -34,8 +34,7 @@ class EventsController < ApplicationController
   def update
     respond_to do |format|
       if @event.update(event_params)
-        flash[:success] = "Событие обновлено!"
-        format.html { redirect_to @event }
+        format.html { redirect_to @event, notice: I18n.t('controllers.events.updated') }
       else
         format.html { render :edit }
       end
@@ -46,7 +45,7 @@ class EventsController < ApplicationController
     @event.destroy
     respond_to do |format|
       flash[:success] = "Событие удалено!"
-      format.html { redirect_to events_url }
+      format.html { redirect_to events_url, notice: I18n.t('controllers.events.deleted') }
     end
   end
 
