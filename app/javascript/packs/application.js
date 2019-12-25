@@ -9,6 +9,7 @@ require("channels")
 require("jquery")
 
 import './bootstrap_custom.js'
+import '../../../node_modules/jquery-datetimepicker/jquery.datetimepicker.js'
 
 $(document).ready(function(){
   $.datetimepicker.setLocale('ru');
