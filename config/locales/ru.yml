@@ -21,11 +21,18 @@ ru:
       created: 'Событие успешно создано!'
       updated: 'Событие успешно обновлено!'
       deleted: 'Событие успешно удалено!'
+    comments:
+      created: 'Комментарий успешно создан'
+      error: 'Ошибка с комментарием'
+      destroyed: 'Комментарий удален'
   app:
     name: 'Шашлыки'
   errors:
     one: '%{count} ошибка'
     few: '%{count} ошибки'
     many: '%{count} ошибок'
+  comments:
+    comment:
+      destroy_confirm: 'Вы уверены, что хотите удалить этот комментарий?'
   messages:
     sure?: 'Вы уверены?'

@@ -29,4 +29,13 @@
       </div>
     </div>
   </div>
+  <div class="row">
+    <div class="col-md-9 col-12">
+      <div class="event-comments mt-2">
+        <div class="mt-2 mb-2">
+          <%= render partial: 'comments/comment', collection: @event.comments %>
+        </div>
+      </div>
+    </div>
+  </div>
 </div>
