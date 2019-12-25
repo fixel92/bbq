@@ -3,7 +3,6 @@ class CommentsController < ApplicationController
   before_action :set_comment, only: [:destroy]
 
   def create
-    binding.pry
     @new_comment = @event.comments.build(comment_params)
     @new_comment.user = current_user
 
@@ -22,7 +21,6 @@ class CommentsController < ApplicationController
     else
       message = { alert: I18n.t('controllers.comments.error') }
     end
-    @comment.destroy
 
     redirect_to @event, message
   end

@@ -25,6 +25,11 @@ ru:
       created: 'Комментарий успешно создан'
       error: 'Ошибка с комментарием'
       destroyed: 'Комментарий удален'
+    subscription:
+      created: 'Вы подписаны на событие'
+      destroyed: 'Участник отписан'
+      error: 'Подписка/отписка не сработала'
+
   app:
     name: 'Шашлыки'
   errors:
@@ -34,5 +39,8 @@ ru:
   comments:
     comment:
       destroy_confirm: 'Вы уверены, что хотите удалить этот комментарий?'
+  subscriptions:
+    subscription:
+      destroy_confirm: 'Вы уверены, что хотите удалить подписку?'
   messages:
     sure?: 'Вы уверены?'

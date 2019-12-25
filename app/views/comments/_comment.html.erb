@@ -10,7 +10,7 @@
     </span>
     <em><%= l comment.created_at, format: :short %></em>
     <% if current_user_can_edit?(comment) %>
-      <%= link_to 'Удалить', event_comment_path(comment.event, comment), method: :delete, data: {confirm: t('.destroy_confirm')}  %>
+      <%= link_to 'x', event_comment_path(comment.event, comment), class: 'btn-sm btn-danger', method: :delete, data: {confirm: t('.destroy_confirm')}  %>
     <% end %>
   </p>
 </div>
