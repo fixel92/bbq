@@ -20,6 +20,12 @@ class UsersController < ApplicationController
   end
 
   private
+
+  def build_resource(hash=nil)
+    super(hash)
+    resource.name = params[:name]
+  end
+
   def set_current_user
     @user = current_user
   end
