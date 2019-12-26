@@ -8,6 +8,7 @@ class Subscription < ApplicationRecord
 
   validates :user_name, presence: true, unless: :user_present?
   validates :user_email, presence: true, format: /\A[a-zA-Z0-9\-_.]+@[a-zA-Z0-9\-_.]+\z/, unless: :user_present?
+  validate :check_email
 
   validates :user, uniqueness: { scope: :event_id }, if: :user_present?
   validates :user_email, uniqueness: { scope: :event_id }, unless: :user_present?
@@ -34,5 +35,11 @@ class Subscription < ApplicationRecord
 
   def check_user
     errors.add(:event, I18n.t('controllers.subscription.error')) if event.user == user
+  end
+
+  def check_email
+    if User.find_by(email: user_email)
+      errors.add(:event, I18n.t('controllers.subscription.error'))
+    end
   end
 end
