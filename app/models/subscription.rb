@@ -38,7 +38,7 @@ class Subscription < ApplicationRecord
   end
 
   def check_email
-    if User.find_by(email: user_email)
+    if !user_present? && User.find_by(email: user_email).present?
       errors.add(:event, I18n.t('controllers.subscription.error'))
     end
   end
