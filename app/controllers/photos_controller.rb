@@ -9,7 +9,7 @@ class PhotosController < ApplicationController
     if @new_photo.save
       redirect_to @event, notice: I18n.t('controllers.photos.created')
     else
-      render :new
+      render 'events/show', alert: I18n.t('controllers.photos.error')
     end
   end
 
