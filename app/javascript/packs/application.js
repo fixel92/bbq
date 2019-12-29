@@ -9,15 +9,9 @@ require("channels")
 require("jquery")
 
 import './bootstrap_custom.js'
+import 'air-datepicker/dist/js/datepicker.min';
 
-$(document).ready(function(){
-  $.datetimepicker.setLocale('ru');
-  $('.datepicker').datetimepicker({
-    format:'d.m.Y H:i',
-    inline: true,
-    lang:'ru'
-  });
-});
+$('.datepicker-here').datepicker([options]);
 
 // Uncomment to copy all static images under ../images to the output folder and reference
 // them with the image_pack_tag helper in views (e.g <%= image_pack_tag 'rails.png' %>)
