@@ -3,6 +3,9 @@ ru:
     models:
       user: 'Пользователь'
       event: 'Событие'
+      subscription: 'Подписка'
+      comment: 'Комментарий'
+      photo: 'Фото'
     attributes:
       user:
         email: 'Email'
@@ -15,6 +18,11 @@ ru:
         address: 'Место проведения'
         datetime: 'Дата и время'
         description: 'Описание'
+      photo:
+        photo: 'Фотография'
+      comment:
+        user_name: 'Ваше имя'
+        body: 'Комментарий'
   controllers:
     users:
       updated: 'Пользователь успешно обновлен'
