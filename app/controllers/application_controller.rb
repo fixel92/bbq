@@ -13,4 +13,14 @@ class ApplicationController < ActionController::Base
     user_signed_in? &&
         (model.user == current_user || model.try(:event).present? && model.event.user == current_user)
   end
+
+  def notify_subscribers(event, thing)
+    all_emails = (event.subscriptions.map(&:user_email) + [event.user.email]).uniq
+    all_emails.delete(thing.user.email) if thing.user.present?
+
+    all_emails.each do |mail|
+      EventMailer.photo(event, thing, mail).deliver_now if thing.is_a? Photo
+      EventMailer.comment(event, thing, mail).deliver_now if thing.is_a? Comment
+    end
+  end
 end
