@@ -15,7 +15,7 @@ class ApplicationController < ActionController::Base
   end
 
   def notify_subscribers(event, thing)
-    all_emails = (event.subscriptions.map(&:user_email) + [event.user.email]).uniq
+    all_emails = (event.subscriptions.pluck(:user_email) + [event.user.email]).uniq
     all_emails.delete(thing.user.email) if thing.user.present?
 
     all_emails.each do |mail|
