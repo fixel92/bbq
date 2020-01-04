@@ -42,8 +42,8 @@
       </div>
       <div class="event-comments mt-2">
         <%= render partial: 'comments/form',locals: {comment: @new_comment || @event.comments.build} %>
-        <div class="mt-2 mb-2">
-          <%= render partial: 'comments/comment', collection: @event.comments.except(@new_comment) %>
+        <div class="mt-2 mb-2" id="event-comments">
+          <%= render partial: 'comments/comment', collection: @event.comments.except(@new_comment).order("created_at DESC") %>
         </div>
       </div>
     </div>

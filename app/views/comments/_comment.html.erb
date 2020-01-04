@@ -1,16 +1,17 @@
-<div class="mt-2">
-  <p><%= comment.body %></p>
-  <p>
-    <span>
-      <% if comment.user.present? %>
-        <%= render partial: 'users/user', object: comment.user %>
-      <% else %>
-        <em><strong><%= comment.user_name %></strong></em>
+<div class="mt-2 card">
+  <div class="card-body">
+     <span>
+        <% if comment.user.present? %>
+          <%= render partial: 'users/user', object: comment.user %>
+        <% else %>
+          <em><strong><%= comment.user_name %></strong></em>
+        <% end %>
+      </span> |
+      <em><%= l comment.created_at, format: :short %></em>
+      <% if current_user_can_edit?(comment) %>
+        <%= link_to 'x', event_comment_path(comment.event, comment), class: 'btn-sm btn-danger', method: :delete, data: {confirm: t('.destroy_confirm')}  %>
       <% end %>
-    </span>
-    <em><%= l comment.created_at, format: :short %></em>
-    <% if current_user_can_edit?(comment) %>
-      <%= link_to 'x', event_comment_path(comment.event, comment), class: 'btn-sm btn-danger', method: :delete, data: {confirm: t('.destroy_confirm')}  %>
-    <% end %>
-  </p>
-</div>
+      <hr>
+      <p><%= comment.body %></p>
+    </div>
+  </div>
