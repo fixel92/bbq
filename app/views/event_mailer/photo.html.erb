@@ -7,7 +7,7 @@
 <%= t '.event' %>
 <h3><%= @event.title %></h3>
 <p><%= link_to 'Ссылка на событие', "#{event_url(@event)}#event-comments" %></p>
-<%= t '.datetime' %>
+<%= @event.datetime >= Date.today ? (t '.datetime') : (t '.datetime_fail') %>
 <h4><%= l @event.datetime %></h4>
 
 <%= t '.owner' %>

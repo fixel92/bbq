@@ -65,6 +65,7 @@ ru:
       author: 'Автор'
       event: 'Событие'
       datetime: 'Состоится'
+      datetime_fail: 'Состоялось'
       owner: 'Организатор'
     photo:
       title: 'Новое фото'

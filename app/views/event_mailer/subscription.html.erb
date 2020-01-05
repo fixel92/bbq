@@ -6,7 +6,7 @@
 <%= t '.event' %>
 <h3><%= @event.title %></h3>
 
-<%= t '.author' %>
+<%= @event.datetime >= Date.today ? (t '.datetime') : (t '.datetime_fail') %>
 <h4><%= l @event.datetime %></h4>
 <%= t '.owner' %>
 <h4><%= @event.user.name %></h4>
