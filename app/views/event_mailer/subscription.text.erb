@@ -6,5 +6,5 @@ Email: <%= @email %>
 -------------------
 
 Событие: <%= @event.title %>
-<%= @event.datetime >= Date.today ? (t '.datetime') : (t '.datetime_fail') %>: <%= l @event.datetime %>
+<%= mailer_date_header(@event) %>: <%= l @event.datetime %>
 Организатор: <%= @event.user.name %>

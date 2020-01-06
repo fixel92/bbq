@@ -6,7 +6,7 @@
 <%= t '.event' %>
 <h3><%= @event.title %></h3>
 
-<%= @event.datetime >= Date.today ? (t '.datetime') : (t '.datetime_fail') %>
+<%= mailer_date_header(@event) %>
 <h4><%= l @event.datetime %></h4>
 <%= t '.owner' %>
 <h4><%= @event.user.name %></h4>

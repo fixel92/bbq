@@ -8,5 +8,5 @@
 --------------------------------
 <%= t '.event' %>: <%= @event.title %>
 <%= link_to 'Ссылка на событие', "#{event_url(@event)}#event-comments" %>
-<%= @event.datetime >= Date.today ? (t '.datetime') : (t '.datetime_fail') %>: <%= l @event.datetime %>
+<%= mailer_date_header(@event) %>: <%= l @event.datetime %>
 <%= t '.owner' %>: <%= @event.user.name %>
