@@ -15,6 +15,7 @@
  */
 @import 'bootstrap_custom.scss';
 @import 'air-datepicker/dist/css/datepicker.min';
+@import 'lightbox2/dist/css/lightbox.min';
 
 .img-icon, .img-icon-small {
     height: 50px;
@@ -39,4 +40,20 @@
 
 .thumbnail-inner {
     padding: 20px 4px 4px;
+}
+
+.lb-nav a.lb-next {
+  background: url(/assets/next.png) right 48% no-repeat;
+}
+
+.lb-nav a.lb-prev {
+  background: url(/assets/prev.png) left 48% no-repeat;
+}
+
+.lb-data .lb-close {
+  background: url(/assets/close.png) no-repeat;
+}
+
+.lb-cancel {
+  background: url(/assets/loading.gif) no-repeat;
 }

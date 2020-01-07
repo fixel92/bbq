@@ -9,8 +9,9 @@ require("channels")
 require("jquery")
 
 import './bootstrap_custom.js'
-import 'air-datepicker/dist/js/datepicker.min';
 import './maps';
+import 'air-datepicker/dist/js/datepicker.min';
+import 'lightbox2/dist/js/lightbox-plus-jquery.min'
 
 $('.datepicker-here').datepicker();
 

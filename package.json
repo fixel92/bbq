@@ -9,6 +9,7 @@
     "air-datepicker": "^2.2.3",
     "bootstrap": "4.3.1",
     "jquery": "^3.4.1",
+    "lightbox2": "^2.11.1",
     "popper.js": "^1.16.0",
     "turbolinks": "^5.2.0"
   },
