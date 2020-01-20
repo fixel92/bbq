@@ -84,6 +84,8 @@ GEM
     erubi (1.9.0)
     excon (0.71.1)
     ffi (1.11.1)
+    figaro (1.1.1)
+      thor (~> 0.14)
     fog-aws (3.5.2)
       fog-core (~> 2.1)
       fog-json (~> 1.1)
@@ -240,6 +242,7 @@ DEPENDENCIES
   carrierwave
   devise
   devise-i18n
+  figaro
   fog-aws
   jbuilder (~> 2.7)
   listen (>= 3.0.5, < 3.2)

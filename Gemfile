@@ -15,6 +15,7 @@ gem 'bootsnap', '>= 1.4.2', require: false
 gem 'carrierwave'
 gem 'rmagick'
 gem 'fog-aws'
+gem "figaro"
 
 group :production do
   gem 'pg'
