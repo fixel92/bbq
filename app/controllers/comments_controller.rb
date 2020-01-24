@@ -11,7 +11,7 @@ class CommentsController < ApplicationController
 
       redirect_to @event, notice: I18n.t('controllers.comments.created')
     else
-      redirect_to 'events/show', alert: I18n.t('controllers.comments.error')
+      render 'events/show', alert: I18n.t('controllers.comments.error')
     end
   end
 
