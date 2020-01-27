@@ -27,6 +27,12 @@ group :development, :test do
 end
 
 group :development do
+  gem "capistrano", "~> 3.10", require: false
+  gem "capistrano-rails", "~> 1.4", require: false
+  gem 'capistrano-passenger'
+  gem 'capistrano-rbenv', '~> 2.1'
+  gem 'capistrano-bundler'
+
   gem 'web-console', '>= 3.3.0'
   gem 'listen', '>= 3.0.5', '< 3.2'
   gem 'spring'
