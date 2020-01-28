@@ -22,8 +22,8 @@ class ApplicationController < ActionController::Base
     all_emails.delete(thing.user.email) if thing.user.present?
 
     all_emails.each do |mail|
-      EventMailer.photo(event, thing, mail).deliver_now if thing.is_a? Photo
-      EventMailer.comment(event, thing, mail).deliver_now if thing.is_a? Comment
+      EventMailer.photo(event, thing, mail).deliver_later if thing.is_a? Photo
+      EventMailer.comment(event, thing, mail).deliver_later if thing.is_a? Comment
     end
   end
 

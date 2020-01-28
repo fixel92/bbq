@@ -12,6 +12,7 @@ gem 'fog-aws'
 gem 'jbuilder', '~> 2.7'
 gem 'puma', '~> 4.1'
 gem 'pundit'
+gem 'resque'
 gem 'rails', '~> 6.0.1'
 gem 'rails-i18n', '~> 6.0.0'
 gem 'rmagick'
@@ -31,6 +32,7 @@ group :development, :test do
 end
 
 group :development do
+  gem 'letter_opener'
   gem "capistrano", "~> 3.10", require: false
   gem 'capistrano-bundler'
   gem 'capistrano-passenger'
