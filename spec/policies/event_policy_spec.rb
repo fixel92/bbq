@@ -1,9 +1,9 @@
 require 'rails_helper'
 
 RSpec.describe EventPolicy, type: :policy do
-  let(:user) { User.new }
-  let(:user2) { User.new }
-  let(:event_1) { Event.create(user: user, title: 'Шашлыки', address: 'Минск', datetime: '2020-01-31 15:31:00') }
+  let(:user) { FactoryBot.create(:user) }
+  let(:user2) { FactoryBot.create(:user) }
+  let(:event_1) { FactoryBot.create(:event, user: user) }
 
   subject { EventPolicy }
 
@@ -20,6 +20,7 @@ RSpec.describe EventPolicy, type: :policy do
   context 'other user' do
     permissions :create? do
       it { is_expected.to permit(user2, Event) }
+
     end
 
     permissions :update?, :destroy?, :edit? do
@@ -36,6 +37,4 @@ RSpec.describe EventPolicy, type: :policy do
       it { is_expected.to permit(user, event_1) }
     end
   end
-
-
 end

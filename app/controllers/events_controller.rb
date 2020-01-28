@@ -2,13 +2,15 @@ class EventsController < ApplicationController
   before_action :authenticate_user!, except: [:show, :index]
   before_action :set_event, except: [:index, :new, :create]
   before_action :password_guard!, only: [:show]
-  after_action :verify_authorized, only: [:edit, :update, :destroy]
+  after_action :verify_authorized, only: [:edit, :update, :destroy, :show]
 
   def index
     @events = Event.all
   end
 
   def show
+    authorize @event
+
     @new_comment = @event.comments.build(params[:comment])
     @new_subscription = @event.subscriptions.build(params[:subscription])
     @new_photo = @event.photos.build(params[:photo])

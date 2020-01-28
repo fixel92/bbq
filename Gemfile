@@ -23,9 +23,11 @@ group :production do
 end
 
 group :development, :test do
+  gem 'factory_bot_rails'
+  gem 'faker', :git => 'https://github.com/faker-ruby/faker.git', :branch => 'master'
   gem 'pry'
-  gem 'sqlite3', '~> 1.4'
   gem 'rspec-rails'
+  gem 'sqlite3', '~> 1.4'
 end
 
 group :development do
