@@ -7,14 +7,14 @@ gem 'bootsnap', '>= 1.4.2', require: false
 gem 'carrierwave'
 gem 'devise'
 gem 'devise-i18n'
-gem "figaro"
+gem 'figaro'
 gem 'fog-aws'
 gem 'jbuilder', '~> 2.7'
 gem 'puma', '~> 4.1'
 gem 'pundit'
-gem 'resque'
 gem 'rails', '~> 6.0.1'
 gem 'rails-i18n', '~> 6.0.0'
+gem 'resque'
 gem 'rmagick'
 gem 'sass-rails', '>= 6'
 gem 'webpacker', '~> 4.0'
@@ -32,12 +32,13 @@ group :development, :test do
 end
 
 group :development do
-  gem 'letter_opener'
-  gem "capistrano", "~> 3.10", require: false
+  gem 'capistrano', '~> 3.10', require: false
   gem 'capistrano-bundler'
   gem 'capistrano-passenger'
-  gem "capistrano-rails", "~> 1.4", require: false
+  gem 'capistrano-rails', '~> 1.4', require: false
   gem 'capistrano-rbenv', '~> 2.1'
+  gem 'capistrano-resque', '~> 0.2.3', require: false
+  gem 'letter_opener'
 
   gem 'listen', '>= 3.0.5', '< 3.2'
   gem 'spring'
