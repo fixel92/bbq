@@ -13,6 +13,8 @@ class Subscription < ApplicationRecord
   validates :user, uniqueness: { scope: :event_id }, if: :user_present?
   validates :user_email, uniqueness: { scope: :event_id }, unless: :user_present?
 
+  after_commit :update_info, on: :create
+
   def user_name
     if user.present?
       user.name
@@ -33,6 +35,8 @@ class Subscription < ApplicationRecord
     user.present?
   end
 
+  private
+
   def check_user
     errors.add(:event, I18n.t('controllers.subscription.error')) if event.user == user
   end
@@ -41,5 +45,9 @@ class Subscription < ApplicationRecord
     if User.find_by(email: user_email).present?
       errors.add(:event, I18n.t('controllers.subscription.error'))
     end
+  end
+
+  def update_info
+    update(user_name: user_name, user_email: user_email)
   end
 end
