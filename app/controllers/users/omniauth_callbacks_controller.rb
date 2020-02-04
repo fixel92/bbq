@@ -15,4 +15,22 @@ class Users::OmniauthCallbacksController < Devise::OmniauthCallbacksController
       redirect_to root_path
     end
   end
+  def vkontakte
+    @user = User.find_for_vkontakte_oauth(request.env['omniauth.auth'])
+
+    if @user.persisted?
+      flash[:notice] = I18n.t('controllers.users.omniauth_callbacks.success', kind: 'Vkontakte')
+      sign_in @user, event: :authentication
+
+      redirect_to edit_user_path(@user)
+    else
+      flash[:error] = I18n.t(
+          'devise.omniauth_callbacks.failure',
+          kind: 'Vkontakte',
+          reason: 'authentication error'
+      )
+
+      redirect_to root_path
+    end
+  end
 end
