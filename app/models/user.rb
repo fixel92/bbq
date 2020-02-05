@@ -41,7 +41,7 @@ class User < ApplicationRecord
 
     where(url: url, provider: provider).first_or_create! do |user|
       user.name = name
-      user.email = email
+      user.email = email.nil? ? nil : email
       user.password = Devise.friendly_token.first(16)
     end
   end
@@ -59,7 +59,7 @@ class User < ApplicationRecord
     where(url: url, provider: provider).first_or_create! do |user|
 
       user.name = name
-      user.email = nil
+      user.email = email.nil? ? nil : email
       user.password = Devise.friendly_token.first(16)
     end
   end

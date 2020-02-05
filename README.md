@@ -1,24 +1,27 @@
-# README
+# Сайт для организации мероприятий "Шашлыки"
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+#### Установка
+```
+git clone git@github.com:fixel92/bbq.git
+cd bbq/
+bundle install
+```
 
-Things you may want to cover:
+#### Настройка
+В файл `confif/application.yml` вносим переменные:
+```
+EMAIL: "***************"
+EMAIL_PASS: "***********"
+OMNIAUTH_FACEBOOK_ID: "*************"
+OMNIAUTH_FACEBOOK_SECRET: "**************************"
+OMNIAUTH_VKONTAKTE_ID: "********"
+OMNIAUTH_VKONTAKTE_SECRET: "*************************"
+```
+Настройте postfix на вашем сервере для отправки писем.
 
-* Ruby version
+Устновите Redis
 
-* System dependencies
+#### Зависимости
 
-* Configuration
+* Ruby версии не ниже 2.6.0
 
-* Database creation
-
-* Database initialization
-
-* How to run the test suite
-
-* Services (job queues, cache servers, search engines, etc.)
-
-* Deployment instructions
-
-* ...
