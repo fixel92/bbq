@@ -20,10 +20,15 @@ ru:
         description: 'Описание'
         pincode: 'Пинкод'
       photo:
+        user: 'Пользователь'
         photo: 'Фотография'
       comment:
         user_name: 'Ваше имя'
         body: 'Комментарий'
+      subscription:
+        user_name: 'Имя'
+        user_email: 'Email'
+        event: 'Событие'
   controllers:
     users:
       updated: 'Пользователь успешно обновлен'
@@ -85,4 +90,4 @@ ru:
       datetime: 'Состоится'
       owner: 'Организатор'
   pundit:
-    not_authorized: 'This is not allowed for you!'
+    not_authorized: 'Доступ запрещен!'
