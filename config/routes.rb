@@ -1,5 +1,7 @@
 Rails.application.routes.draw do
   root 'events#index'
+
+  get '/pages/:page' => 'pages#show'
   devise_for :users, controllers: {
     omniauth_callbacks: 'users/omniauth_callbacks'
   }
